@@ -27,4 +27,8 @@ describe("Sudoku", () => {
     const sudoku = new Sudoku(7, 6);
     expect(sudoku.validNumber()).toEqual(sudoku);
   });
+  test("if row has all different numbers it is valid", () => {
+    const sudoku = new Sudoku();
+    expect(sudoku.validRow([])).toEqual([]);
+  });
 });
