@@ -7,8 +7,8 @@ describe("Sudoku", () => {
     expect(sudoku.row).toEqual(3);
     expect(sudoku.column).toEqual(6);
   });
-  // test("should return a number from one to nine", () => {
-  //   const row = new Sudoku(2);
-  //   expect(row.row).toEqual(2);
-  // });
+  test("should return not a valid number if it is not 1 through 9", () => {
+    const sudoku = new Sudoku(10, 9);
+    expect(sudoku.validNumber()).toEqual("not a valid number");
+  });
 });
