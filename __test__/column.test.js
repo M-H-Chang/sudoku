@@ -1,8 +1,19 @@
-import Columns from "./../src/column.js";
+import Column from "./../src/column.js";
 
 describe("column", () => {
-  test("return the number that the user inputs for column", () => {
-    const column = new Columns();
-    expect(column.addNumber(3)).toEqual([3]);
+  test("should push column number into an array of numbers", () => {
+    const column = new Column();
+    expect(column.addNumber(5)).toEqual([5]);
+  });
+  test("should return duplicate numbers for columns with the same numbers", () => {
+    const columns = new Column();
+    columns.addNumber(5);
+    columns.addNumber(5);
+    expect(columns.notRepeating(columns.column)).toEqual("repeats numbers");
+  });
+  test("should not have the same number twice", () => {
+    const columns = new Column();
+    columns.addNumber(5);
+    expect(columns.notRepeating(columns.column)).toEqual(columns.column);
   });
 });
