@@ -11,4 +11,20 @@ describe("Sudoku", () => {
     const sudoku = new Sudoku(10, 9);
     expect(sudoku.validNumber()).toEqual("not a valid number");
   });
+  test("should return not a valid number if column number is greater than 9", () => {
+    const sudoku = new Sudoku(3, 10);
+    expect(sudoku.validNumber()).toEqual("not a valid number");
+  });
+  test("should return not a valid number if row number is less than 1", () => {
+    const sudoku = new Sudoku(0.8, 8);
+    expect(sudoku.validNumber()).toEqual("not a valid number");
+  });
+  test("should return not a valid number if column number is less than 1", () => {
+    const sudoku = new Sudoku(8, 0);
+    expect(sudoku.validNumber()).toEqual("not a valid number");
+  });
+  test("should return the array if there are valid numbers", () => {
+    const sudoku = new Sudoku(7, 6);
+    expect(sudoku.validNumber()).toEqual(sudoku);
+  });
 });
